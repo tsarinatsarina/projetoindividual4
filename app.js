@@ -1,9 +1,26 @@
+class propriedadesCss {
+    constructor() {
+        this.lista = [];
+    }
 
-const rl = require('readline-sync');
-const chalk = require('chalk');
-const propriedadesCss = require('./propriedades');
+    adicionarElemento(item) {
+        this.lista.push(item);
+    }
 
-const ordenacaoPropriedades = new propriedadesCss();
+    ordernarElementos() {
+        this.lista.sort();
+    }
+
+    mostrarElementos() {
+        return this.lista;
+    }
+}
+
+import rl from 'readline-sync';
+import chalk from 'chalk';
+import PropriedadesCss from './propriedades';
+
+const ordenacaoPropriedades = new PropriedadesCss();
 
 console.log(chalk.blue("Bem-vindo à Ferramenta de Ordenação de Propriedades CSS!"));
 
@@ -12,12 +29,16 @@ while (true) {
     if (propriedade.toUpperCase() === "SAIR") {
         break;
     }
-    listaPropriedades.adicionarElemento(propriedade);
+    ordenacaoPropriedades.adicionarElemento(propriedade);
 }
 
 ordenacaoPropriedades.ordernarElementos();
 
 console.log(chalk.green("Propriedades ordenadas:"));
-listaPropriedades.mostrarElementos().forEach((propriedade) => {
+ordenacaoPropriedades.mostrarElementos().forEach((propriedade) => {
     console.log(propriedade);
 });
+
+
+
+
