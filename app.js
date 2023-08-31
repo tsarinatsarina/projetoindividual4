@@ -1,4 +1,7 @@
-class propriedadesCss {
+import rl from 'readline-sync';
+import chalk from 'chalk';
+
+class PropriedadesCss {
     constructor() {
         this.lista = [];
     }
@@ -15,10 +18,6 @@ class propriedadesCss {
         return this.lista;
     }
 }
-
-import rl from 'readline-sync';
-import chalk from 'chalk';
-import PropriedadesCss from './propriedades';
 
 const ordenacaoPropriedades = new PropriedadesCss();
 
